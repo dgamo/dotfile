@@ -26,7 +26,7 @@ let g:NERDTreeMouseMode=3
 syntax enable
 set background=dark
 colorscheme solarized
-set guifont=Monaco\ 12
+set guifont=Monaco\ 14
 
 " show existing tab with 4 spaces width
 set tabstop=4
