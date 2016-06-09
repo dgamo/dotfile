@@ -15,6 +15,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -35,6 +36,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"vim-fugitive
+set statusline+=%{fugitive#statusline()}
 
 "Ctrlp
 let g:ctrlp_working_path_mode = 'ra' "start search in the nearest ancestor with .git
