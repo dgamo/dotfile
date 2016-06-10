@@ -13,9 +13,15 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'moll/vim-node'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-haml'
+Plugin 'crusoexia/vim-monokai'
+
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -27,15 +33,32 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=3 
 let NERDTreeShowHidden=1
 
+"Tern
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+
 "Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint']
+
+"YouCompleteMe
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.javascript = ['re!(?=[a-zA-Z_])']
+
+"incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:python_host_prog = '/usr/local/lib/python2.7'
 
 "vim-fugitive
 set statusline+=%{fugitive#statusline()}
@@ -46,8 +69,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.min.js
 
 "Theme and font
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme monokai
+set t_Co=256
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -73,3 +98,6 @@ set clipboard=unnamed
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=L  "remove left-hand scroll barBS>
+
+set hlsearch "Highlighted searching
+set autoread
