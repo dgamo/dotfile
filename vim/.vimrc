@@ -21,11 +21,12 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-haml'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'benmills/vimux'
 
 
 call vundle#end()            " required
 filetype plugin indent on
-"enable mouse
+"enable mouse:
 set mouse=a
 
 "NerdTree
@@ -73,6 +74,8 @@ colorscheme monokai
 set t_Co=256
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
+
+ set guifont=Monaco:h15
 
 if has("gui_running")
   if has("gui_gtk2")
