@@ -22,6 +22,10 @@ Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-haml'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'benmills/vimux'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-gitgutter'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'fatih/vim-go'
 
 
 call vundle#end()            " required
@@ -37,6 +41,9 @@ let NERDTreeShowHidden=1
 "Tern
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
+
+"TagBar
+nmap <F8> :TagbarToggle<CR>
 
 "Syntastic
 set statusline+=%#warningmsg#
@@ -64,9 +71,19 @@ let g:python_host_prog = '/usr/local/lib/python2.7'
 "vim-fugitive
 set statusline+=%{fugitive#statusline()}
 
+"Vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
 "Ctrlp
 let g:ctrlp_working_path_mode = 'ra' "start search in the nearest ancestor with .git
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.min.js
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.min.js,*/node_modules/*
+
 
 "Theme and font
 syntax enable
