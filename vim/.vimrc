@@ -25,7 +25,8 @@ Plugin 'benmills/vimux'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-gitgutter'
 Plugin 'dkprice/vim-easygrep'
-Plugin 'fatih/vim-go'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'ervandew/supertab'
 
 
 call vundle#end()            " required
