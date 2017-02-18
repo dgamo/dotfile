@@ -27,6 +27,7 @@ Plugin 'vim-gitgutter'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 
 call vundle#end()            " required
