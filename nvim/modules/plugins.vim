@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " NerdTree configuration
@@ -16,3 +17,6 @@ map <C-o> :NERDTreeToggle<CR>
 
 " FZF configuration
 nnoremap <C-p> :FZF<CR> 
+
+" Terraform configuration
+let g:terraform_fmt_on_save=1
