@@ -1,3 +1,7 @@
 # Dotfiles #
 
-Some dotfiles for vim, git etc.
+Bootstrap configuration for neovim.
+
+```
+make install
+```
